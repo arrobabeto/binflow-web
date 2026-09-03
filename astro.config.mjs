@@ -8,8 +8,8 @@ import robotsTxt from 'astro-robots-txt';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: actualizar con el dominio real de producción (se usa para sitemap.xml y robots.txt)
-  site: 'https://binflow.ai',
+  // Dominio de producción (se usa para canonical, sitemap.xml y robots.txt)
+  site: 'https://binflow-web.vercel.app',
 
   vite: {
     plugins: [tailwindcss()]
