@@ -1,0 +1,10 @@
+# Binflow
+
+> Binflow es una herramienta con inteligencia artificial para la
+> autogestión de páginas web: permite crear, editar y mantener un sitio
+> web sin necesidad de conocimientos técnicos.
+
+## Sobre Binflow
+
+- Autogestión de contenido y estructura de páginas web mediante IA.
+- Pensado para dueños de negocio y equipos sin equipo de desarrollo dedicado.
