@@ -1,0 +1,84 @@
+---
+import { AudioWaveform } from '@lucide/astro';
+
+const links = [
+  { label: 'Producto', href: '#producto' },
+  { label: 'Stacks', href: '#stacks' },
+  { label: 'Tools', href: '#tools' },
+  { label: 'Flujo', href: '#flujo' },
+  { label: 'Contacto', href: '#contacto' }
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-line bg-surface/90 backdrop-blur-md">
+  <nav
+    class="container-page flex h-[84px] items-center justify-between"
+    aria-label="Navegación principal"
+  >
+    <!-- Marca -->
+    <a href="/" class="flex items-center gap-2.5" aria-label="Binflow — inicio">
+      <span
+        class="flex items-center gap-[7px] rounded-[4px] border border-line px-[11px] py-2"
+      >
+        <AudioWaveform class="size-4 text-brand" stroke-width={2} aria-hidden="true" />
+        <span class="flex flex-col leading-none">
+          <span class="text-[14px] tracking-[-0.01em] text-ink">
+            <b class="font-bold">Bin</b><span class="font-normal">flow</span>
+          </span>
+          <span
+            class="mt-[3px] font-mono text-[4.4px] font-semibold tracking-[0.18em] text-body"
+          >
+            AI EMPOWERING WEBSITES
+          </span>
+        </span>
+      </span>
+    </a>
+
+    <!-- Links -->
+    <ul class="hidden items-center gap-8 lg:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-[14px] font-medium text-body transition-colors hover:text-ink"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Controles -->
+    <div class="flex items-center gap-4">
+      <div
+        class="hidden items-center rounded-full bg-surface-alt p-0.5 sm:flex"
+        role="group"
+        aria-label="Idioma"
+      >
+        <button
+          type="button"
+          class="rounded-full bg-brand px-[9px] py-[5px] text-[9px] font-bold text-white"
+          aria-pressed="true"
+        >
+          ES
+        </button>
+        <button
+          type="button"
+          class="rounded-full px-[9px] py-[5px] text-[9px] text-body transition-colors hover:text-ink"
+          aria-pressed="false"
+        >
+          EN
+        </button>
+      </div>
+
+      <a
+        href="#contacto"
+        class="rounded-md bg-brand px-4 py-2 text-[13px] font-semibold text-ink-deep transition-colors hover:bg-brand-dark hover:text-white"
+      >
+        Solicitar acceso
+      </a>
+    </div>
+  </nav>
+</header>

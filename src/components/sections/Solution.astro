@@ -1,0 +1,76 @@
+---
+const steps = [
+  {
+    number: '1',
+    title: 'Pide tu cambio',
+    body: 'Escribe lo que necesitas como si hablaras con tu equipo.'
+  },
+  {
+    number: '2',
+    title: 'Revisa antes de publicar',
+    body: 'Visualiza cada cambio en un preview antes de que sea visible.'
+  },
+  {
+    number: '3',
+    title: 'Aprueba y listo',
+    body: 'Con un clic tu web se actualiza. Siempre con respaldo automático.'
+  }
+];
+---
+
+<section class="bg-surface pt-10 pb-16 lg:pt-9 lg:pb-[77px]">
+  <div class="container-page grid items-start gap-16 lg:grid-cols-[696px_1fr]">
+    <!-- Copy -->
+    <div class="flex flex-col gap-6" data-reveal>
+      <div class="flex flex-col items-start gap-3">
+        <span class="eyebrow">QUÉ ES BINFLOW</span>
+        <h2
+          class="text-[28px] leading-[1.3] font-bold tracking-[-0.02em] text-ink lg:text-[36px]"
+        >
+          Una IA que trabaja en tu web... con frenos, no a ciegas.
+        </h2>
+      </div>
+
+      <p class="text-[15px] leading-[1.65] text-body lg:text-[16px]">
+        Binflow trabaja directamente con tu sitio web para que tú no tengas que hacerlo.
+        Pide cambios en lenguaje natural, revisa un preview antes de publicar y aprueba
+        con un clic. Sin riesgos, sin complicaciones y siempre con respaldo automático.
+      </p>
+
+      <blockquote class="rounded-lg bg-surface-alt px-5 py-5">
+        <p class="text-[16px] font-bold text-brand lg:text-[18px]">
+          "No es un chatbot. Es tu flujo de publicación impulsado por IA."
+        </p>
+      </blockquote>
+    </div>
+
+    <!-- Esquema de 3 pasos -->
+    <div
+      class="rounded-xl border border-line-cool bg-surface p-8 shadow-[0_1px_3px_rgba(15,23,42,0.06)]"
+      data-reveal
+    >
+      <p class="font-mono text-[12px] font-semibold tracking-[0.08em] text-brand">
+        ASÍ DE FÁCIL FUNCIONA BINFLOW
+      </p>
+
+      <ol class="mt-5 flex flex-col">
+        {
+          steps.map((step, index) => (
+            <li>
+              {index > 0 && <hr class="my-5 border-line-cool" />}
+              <div class="flex items-start gap-3">
+                <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand/10 font-mono text-[12px] font-bold text-brand">
+                  {step.number}
+                </span>
+                <div>
+                  <h3 class="text-[14px] font-semibold text-ink">{step.title}</h3>
+                  <p class="mt-1 text-[12px] leading-[1.5] text-body">{step.body}</p>
+                </div>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

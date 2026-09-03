@@ -1,0 +1,245 @@
+---
+import { MoreVertical } from '@lucide/astro';
+---
+
+<section class="bg-surface-alt py-16 lg:py-24" id="producto">
+  <div class="container-page flex flex-col items-center gap-12">
+    <!-- Copy principal -->
+    <div class="flex max-w-[1000px] flex-col items-center gap-6 text-center" data-reveal>
+      <h1
+        class="text-[36px] leading-[1.14] font-bold tracking-[-0.03em] text-ink text-balance sm:text-[44px] lg:text-[56px]"
+      >
+        Escríbele a tu web como le escribirías a tu agencia.
+      </h1>
+
+      <p class="max-w-[620px] text-[16px] leading-[1.6] text-body text-balance lg:text-[18px]">
+        Haz tu petición en lenguaje natural por Telegram. La IA interpreta, ejecuta y te
+        muestra el resultado. Tú apruebas con un sí.
+      </p>
+
+      <p class="text-[15px] font-medium text-brand lg:text-[16px]">
+        Cambios seguros, en minutos y aprobados por ti.
+      </p>
+
+      <div class="mt-2 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="#contacto"
+          class="rounded-md bg-brand px-6 py-[15px] text-[15px] font-semibold text-ink-deep transition-colors hover:bg-brand-dark hover:text-white"
+        >
+          Solicitar acceso
+        </a>
+        <a
+          href="#flujo"
+          class="rounded-md border border-line-strong bg-surface px-6 py-[15px] text-[15px] font-semibold text-ink transition-colors hover:border-ink"
+        >
+          Ver cómo funciona
+        </a>
+      </div>
+    </div>
+
+    <!-- Mockup operativo: 3 pasos -->
+    <div class="grid w-full max-w-[1120px] gap-6 lg:grid-cols-3" data-reveal>
+      <!-- Card 1 — Tú pides -->
+      <article
+        class="flex min-h-[460px] flex-col overflow-hidden rounded-xl border border-line-cool bg-surface"
+      >
+        <header class="flex items-center gap-3 bg-telegram px-4 py-[13px]">
+          <span
+            class="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#0F52BA] text-[14px] font-bold text-white"
+            aria-hidden="true">B</span
+          >
+          <span class="flex flex-1 flex-col leading-tight">
+            <span class="text-[14px] font-semibold text-white">Binflow Bot</span>
+            <span class="text-[11px] text-white/80">en línea</span>
+          </span>
+          <MoreVertical class="size-[18px] text-white/80" aria-hidden="true" />
+        </header>
+
+        <div class="flex flex-1 flex-col gap-3 p-3">
+          <div class="flex flex-col items-end gap-1">
+            <p
+              class="max-w-[240px] rounded-lg rounded-br-sm bg-[#2DD4BF] px-3 py-2 text-[12px] leading-[1.45] text-slate-ink"
+            >
+              Actualiza el hero del sitio con el nuevo copy: Transformando pagos en la
+              nube. Agrega las métricas +40% conversión y &lt; 50ms latencia.
+            </p>
+            <span class="text-[10px] text-slate-ink/70">14:32 ✓✓</span>
+          </div>
+
+          <div class="flex items-end gap-2">
+            <span
+              class="flex size-6 shrink-0 items-center justify-center rounded-full bg-telegram text-[10px] font-bold text-white"
+              aria-hidden="true">B</span
+            >
+            <div class="flex flex-col items-start gap-1">
+              <p
+                class="max-w-[230px] rounded-lg rounded-bl-sm bg-[#F1F5F9] px-3 py-2 text-[12px] leading-[1.45] text-slate-ink"
+              >
+                Entendido. Voy a actualizar el hero con el nuevo copy y métricas.
+                ¿Confirmas para generar el preview?
+              </p>
+              <span class="text-[10px] text-slate-ink/70">14:32</span>
+            </div>
+          </div>
+        </div>
+
+        <footer class="flex items-center gap-2 border-t border-line-cool px-3 py-2.5">
+          <span
+            class="flex size-[18px] items-center justify-center rounded-full bg-brand font-mono text-[10px] font-bold text-ink-deep"
+            >1</span
+          >
+          <span class="text-[12px] font-semibold text-[#374151]">Tú pides</span>
+        </footer>
+      </article>
+
+      <!-- Card 2 — Ves el resultado real -->
+      <article
+        class="flex min-h-[460px] flex-col overflow-hidden rounded-xl border border-line-cool bg-surface"
+      >
+        <div
+          class="flex items-center justify-center gap-1.5 bg-success py-[6px] font-mono text-[10px] font-bold tracking-[0.08em] text-white"
+        >
+          <span class="size-1.5 rounded-full bg-white" aria-hidden="true"></span>
+          PREVIEW LISTO
+        </div>
+
+        <!-- Barra del navegador -->
+        <div class="flex items-center gap-2 border-b border-line-cool px-3 py-[11px]">
+          <span class="flex gap-1" aria-hidden="true">
+            <span class="size-2 rounded-full bg-[#FF5F57]"></span>
+            <span class="size-2 rounded-full bg-[#FEBC2E]"></span>
+            <span class="size-2 rounded-full bg-[#28C840]"></span>
+          </span>
+          <span
+            class="flex flex-1 items-center gap-1.5 rounded bg-surface-soft px-2 py-1 font-mono text-[10px] text-[#333D4F]"
+          >
+            <span class="size-1.5 rounded-full bg-success" aria-hidden="true"></span>
+            preview-stg.binflow.dev
+          </span>
+        </div>
+
+        <!-- Mini-sitio -->
+        <div class="flex flex-1 flex-col">
+          <div
+            class="flex items-center justify-between border-b border-line-cool px-4 py-3"
+          >
+            <span class="text-[13px] font-bold text-brand">BinFlow</span>
+            <div class="flex items-center gap-3">
+              <span class="text-[10px] text-[#94A3B8]">Producto</span>
+              <span class="text-[10px] text-[#94A3B8]">Precios</span>
+              <span
+                class="rounded bg-telegram px-2 py-1 text-[10px] font-semibold text-white"
+                >Empezar</span
+              >
+            </div>
+          </div>
+
+          <div class="flex flex-1 flex-col items-center justify-center gap-4 px-5 py-8">
+            <span
+              class="rounded-full border border-brand/40 bg-brand/10 px-2.5 py-1 font-mono text-[9px] font-semibold text-brand"
+            >
+              NUEVO → Integración Stripe
+            </span>
+            <h3 class="text-center text-[18px] font-bold text-slate-ink text-balance">
+              Transformando pagos en la nube
+            </h3>
+            <div class="flex items-stretch gap-5">
+              <div class="flex flex-col items-center gap-0.5">
+                <span class="font-mono text-[22px] font-bold text-brand">+40%</span>
+                <span class="text-[10px] text-[#94A3B8]">Conversión web</span>
+              </div>
+              <span class="w-px bg-line-cool" aria-hidden="true"></span>
+              <div class="flex flex-col items-center gap-0.5">
+                <span class="font-mono text-[22px] font-bold text-surface-soft"
+                  >&lt; 50ms</span
+                >
+                <span class="text-[10px] text-[#94A3B8]">Latencia API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="flex items-center gap-2 border-t border-line-cool px-3 py-2.5">
+          <span
+            class="flex size-[18px] items-center justify-center rounded-full bg-brand font-mono text-[10px] font-bold text-ink-deep"
+            >2</span
+          >
+          <span class="text-[12px] font-semibold text-[#374151]">Ves el resultado real</span
+          >
+        </footer>
+      </article>
+
+      <!-- Card 3 — Apruebas y listo -->
+      <article
+        class="flex min-h-[460px] flex-col overflow-hidden rounded-xl border border-line-cool bg-surface"
+      >
+        <header class="flex items-center gap-3 bg-telegram px-4 py-[13px]">
+          <span
+            class="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#0F52BA] text-[14px] font-bold text-white"
+            aria-hidden="true">B</span
+          >
+          <span class="flex flex-1 flex-col leading-tight">
+            <span class="text-[14px] font-semibold text-white">Binflow Bot</span>
+            <span class="text-[11px] text-white/80">en línea</span>
+          </span>
+          <span
+            class="flex items-center gap-1 rounded-full bg-success px-2 py-1 font-mono text-[9px] font-bold text-white"
+          >
+            <span class="size-1 rounded-full bg-white" aria-hidden="true"></span>
+            EN VIVO
+          </span>
+        </header>
+
+        <div class="flex flex-1 flex-col gap-3 p-3">
+          <div class="flex items-end gap-2">
+            <span
+              class="flex size-6 shrink-0 items-center justify-center rounded-full bg-telegram text-[10px] font-bold text-white"
+              aria-hidden="true">B</span
+            >
+            <div class="flex flex-col items-start gap-1">
+              <p
+                class="max-w-[230px] rounded-lg rounded-bl-sm bg-[#EEEFF1] px-3 py-2 text-[12px] leading-[1.45] text-slate-ink"
+              >
+                Preview listo. Revisa los cambios aquí: preview-stg.binflow.dev ¿Apruebas
+                para publicar?
+              </p>
+              <span class="text-[10px] text-slate-ink/70">14:33</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-end gap-1">
+            <p
+              class="rounded-lg rounded-br-sm bg-[#2DD4BF] px-3 py-2 text-[12px] leading-[1.45] text-slate-ink"
+            >
+              Sí, publica. 🚀
+            </p>
+            <span class="text-[10px] text-slate-ink/70">14:33 ✓✓</span>
+          </div>
+
+          <div class="flex items-end gap-2">
+            <span
+              class="flex size-6 shrink-0 items-center justify-center rounded-full bg-telegram text-[10px] font-bold text-white"
+              aria-hidden="true">B</span
+            >
+            <div class="flex flex-col items-start gap-1">
+              <p
+                class="max-w-[230px] rounded-lg rounded-bl-sm border border-success/40 bg-[#E7F8F2] px-3 py-2 text-[12px] leading-[1.45] text-slate-ink"
+              >
+                ✓ Publicado exitosamente. Los cambios ya están en vivo.
+              </p>
+              <span class="text-[10px] text-slate-ink/70">14:33</span>
+            </div>
+          </div>
+        </div>
+
+        <footer class="flex items-center gap-2 border-t border-line-cool px-3 py-2.5">
+          <span
+            class="flex size-[18px] items-center justify-center rounded-full bg-success font-mono text-[10px] font-bold text-white"
+            >3</span
+          >
+          <span class="text-[12px] font-semibold text-[#374151]">Apruebas y listo</span>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>

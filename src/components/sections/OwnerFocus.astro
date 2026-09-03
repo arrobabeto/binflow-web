@@ -1,0 +1,215 @@
+---
+import { ShieldCheck, CheckCircle2, Sparkles, Flashlight } from '@lucide/astro';
+
+const badges = ['Sin código', 'Sin esperas', 'Con backups', 'Control total'];
+---
+
+<section class="bg-surface pt-16 pb-20 lg:pt-[67px] lg:pb-[78px]">
+  <div class="container-page flex flex-col items-center gap-16">
+    <!-- Encabezado -->
+    <div class="flex max-w-[960px] flex-col items-center gap-6 text-center" data-reveal>
+      <ul class="flex flex-wrap items-center justify-center gap-3">
+        {
+          badges.map((badge) => (
+            <li class="rounded-full border border-brand/30 bg-brand/5 px-3.5 py-1.5 text-[13px] font-semibold text-brand-dark">
+              {badge}
+            </li>
+          ))
+        }
+      </ul>
+
+      <h2
+        class="max-w-[960px] text-[32px] leading-[1.15] font-extrabold tracking-[-0.03em] text-ink lg:text-[44px]"
+      >
+        Tu negocio no puede esperar. Tu web tampoco.
+      </h2>
+
+      <p class="max-w-[940px] text-[16px] leading-[1.65] text-body lg:text-[18px]">
+        Olvídate de esperar días por un cambio, de perseguir a tu agencia o de arriesgar tu
+        web con cada publicación. Con Binflow, tú escribes lo que necesitas como si fuera
+        un mensaje y se ejecuta <strong class="font-semibold text-brand">en minutos</strong>, con <strong class="font-semibold text-brand">preview en tiempo real</strong>, <strong class="font-semibold text-brand">validación automática</strong> y <strong class="font-semibold text-brand">sin tocar una línea de código</strong>. Tú mandas, tu web responde.
+      </p>
+    </div>
+
+    <!-- 3 pasos -->
+    <div class="grid w-full gap-6 lg:grid-cols-3">
+      <!-- Paso 1 -->
+      <article
+        class="flex flex-col gap-6 overflow-hidden rounded-3xl bg-surface-soft p-8 lg:h-[474px]"
+        data-reveal
+      >
+        <span
+          class="flex size-9 items-center justify-center rounded-full bg-brand text-[16px] font-bold text-white"
+          >1</span
+        >
+        <div class="flex flex-col gap-3">
+          <h3 class="text-[22px] font-bold tracking-[-0.02em] text-ink">
+            Escribe tu cambio
+          </h3>
+          <p class="text-[15px] leading-[1.6] text-body">
+            Pide lo que necesitas por Telegram, exactamente igual que si le escribieras a
+            tu desarrollador de confianza.
+          </p>
+        </div>
+
+        <!-- Mockup: chat -->
+        <div
+          class="mt-auto overflow-hidden rounded-xl border border-line-cool bg-surface"
+          aria-hidden="true"
+        >
+          <div
+            class="flex items-center gap-2 border-b border-line-cool bg-surface-soft px-4 py-3"
+          >
+            <span class="size-2 rounded-full bg-brand"></span>
+            <span class="text-[13px] font-bold text-ink">Binflow AI Bot</span>
+            <span class="text-[11px] text-body">en línea</span>
+          </div>
+          <div class="flex flex-col gap-2.5 p-4 pt-8">
+            <p
+              class="ml-auto max-w-[260px] rounded-lg bg-[#EAF6FB] px-3 py-2.5 text-right text-[12px] leading-[1.5] text-ink"
+            >
+              "Agrega una nueva promoción de primavera del 20% en toda la web y cambia el
+              teléfono al +34 600 123 456."
+            </p>
+            <div class="rounded-lg border border-line-cool bg-surface px-3 py-2.5">
+              <p class="text-[12px] font-semibold text-brand-dark">
+                ⚡ Procesando cambios...
+              </p>
+              <p class="mt-1 text-[11px] text-body">
+                Generando preview en tiempo real en un instante.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Paso 2 -->
+      <article
+        class="flex flex-col gap-6 overflow-hidden rounded-3xl bg-surface-soft p-8 lg:h-[474px]"
+        data-reveal
+      >
+        <span
+          class="flex size-9 items-center justify-center rounded-full bg-brand text-[16px] font-bold text-white"
+          >2</span
+        >
+        <div class="flex flex-col gap-3">
+          <h3 class="text-[22px] font-bold tracking-[-0.02em] text-ink">
+            Revisa el preview
+          </h3>
+          <p class="text-[15px] leading-[1.6] text-body">
+            La IA simula los cambios y te genera una URL de prueba al instante. Compara el
+            antes y el después con total tranquilidad.
+          </p>
+        </div>
+
+        <!-- Mockup: navegador -->
+        <div
+          class="mt-auto overflow-hidden rounded-xl border border-line-cool bg-surface"
+          aria-hidden="true"
+        >
+          <div
+            class="flex items-center gap-2 border-b border-line-cool px-3 py-2.5"
+          >
+            <span class="flex gap-1">
+              <span class="size-1.5 rounded-full bg-[#FF5F57]"></span>
+              <span class="size-1.5 rounded-full bg-[#FEBC2E]"></span>
+              <span class="size-1.5 rounded-full bg-[#28C840]"></span>
+            </span>
+            <span
+              class="flex-1 rounded border border-line-cool px-2 py-1 text-[9px] text-body"
+              >tuweb.binflow.preview</span
+            >
+            <span class="text-[9px] font-semibold tracking-wide text-brand-dark"
+              >PREVIEW</span
+            >
+          </div>
+          <div class="flex flex-col gap-3 p-4">
+            <div
+              class="flex items-center gap-2 rounded-lg border-2 border-brand bg-brand/5 px-3 py-2.5"
+            >
+              <Sparkles class="size-3.5 shrink-0 text-brand-dark" />
+              <span class="text-[10px] font-bold tracking-wide text-brand-dark"
+                >PROMO PRIMAVERA: 20% DESC. APLICADO</span
+              >
+            </div>
+            <div class="rounded-lg border border-line-cool px-3 py-2.5">
+              <p class="text-[9px] font-semibold text-body">Contacto Directo</p>
+              <p class="mt-1 flex items-center gap-2">
+                <span class="text-[12px] font-bold text-success">+34 600 123 456</span>
+                <span class="text-[8px] font-semibold text-success">NUEVO</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Paso 3 -->
+      <article
+        class="flex flex-col gap-6 overflow-hidden rounded-3xl bg-surface-soft p-8 lg:h-[474px]"
+        data-reveal
+      >
+        <span
+          class="flex size-9 items-center justify-center rounded-full bg-brand text-[16px] font-bold text-white"
+          >3</span
+        >
+        <div class="flex flex-col gap-3">
+          <h3 class="text-[22px] font-bold tracking-[-0.02em] text-ink">Aprueba y listo</h3>
+          <p class="text-[15px] leading-[1.6] text-body">
+            Responde con un simple "Sí, publícalo" y tu web se actualizará al instante.
+            Siempre protegido con backups automáticos.
+          </p>
+        </div>
+
+        <!-- Mockup: confirmaciones -->
+        <div
+          class="mt-auto flex flex-col gap-3 rounded-xl border border-line-cool bg-surface p-4"
+          aria-hidden="true"
+        >
+          <div
+            class="flex items-start gap-2.5 rounded-lg border border-success/30 bg-[#E7F8F2] px-3 py-2.5"
+          >
+            <CheckCircle2 class="mt-px size-4 shrink-0 fill-success text-white" />
+            <div>
+              <p class="text-[12px] font-bold text-success">¡Web Actualizada con Éxito!</p>
+              <p class="mt-0.5 text-[10px] text-body">
+                Los cambios ya están en vivo y visibles para tus clientes.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex items-start gap-2.5 rounded-lg border border-line-cool px-3 py-2.5"
+          >
+            <ShieldCheck class="mt-px size-4 shrink-0 text-ink" />
+            <div>
+              <p class="text-[11px] font-semibold text-ink">Backup de seguridad creado</p>
+              <p class="mt-0.5 text-[9px] text-body">
+                Punto de restauración automático #048 generado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Banner de cierre -->
+    <div
+      class="flex w-full flex-wrap items-center justify-between gap-4 rounded-2xl bg-surface-soft px-8 py-5"
+      data-reveal
+    >
+      <p class="flex items-center gap-3 text-[15px] font-semibold text-ink">
+        <Flashlight class="size-5 text-brand" aria-hidden="true" />
+        Tu web, bajo tu control. Sin código, sin esperas.
+      </p>
+      <p class="flex items-center gap-2">
+        <span class="text-[14px] font-medium text-body">¿Listo para tomar las riendas?</span
+        >
+        <a
+          href="#contacto"
+          class="text-[14px] font-bold text-brand-dark underline underline-offset-4 hover:text-brand"
+        >
+          Solicita Early Access
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

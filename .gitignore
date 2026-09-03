@@ -33,3 +33,7 @@ pnpm-debug.log*
 # Testing / cache
 coverage/
 .cache/
+
+# Astro
+.astro/
+.env.production

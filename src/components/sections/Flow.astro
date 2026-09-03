@@ -1,0 +1,85 @@
+---
+import { MessageCircle, Sparkles, FileCode, Monitor, ShieldCheck } from '@lucide/astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const steps = [
+  {
+    icon: MessageCircle,
+    title: 'Pides en lenguaje natural',
+    body: 'Describe tu cambio como si hablaras con tu equipo.'
+  },
+  {
+    icon: Sparkles,
+    title: 'La IA propone el plan',
+    body: 'Analiza tu sitio y propone los cambios de código y contenido.'
+  },
+  {
+    icon: FileCode,
+    title: 'Genera el borrador',
+    body: 'Genera las plantillas y maqueta los contenidos automáticamente.'
+  },
+  {
+    icon: Monitor,
+    title: 'Revisas el preview real',
+    body: 'Un staging temporal te muestra el resultado antes de publicar.'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Apruebas o pides revisión',
+    body: 'Si estás conforme, se publica. Si no, pide cambios.'
+  }
+];
+---
+
+<section class="bg-surface-alt py-16 lg:py-[70px]" id="flujo">
+  <div class="container-page flex flex-col items-center gap-8">
+    <SectionHeader eyebrow="FLUJO" title="Pedir. Ver. Aprobar. Listo." />
+
+    <!-- Timeline horizontal sobre patrón de puntos -->
+    <div
+      class="relative w-full overflow-hidden rounded-[20px] border border-line-cool bg-surface px-6 py-12 lg:px-10 lg:py-15"
+      data-reveal
+    >
+      <!-- Patrón de puntos -->
+      <div
+        class="pointer-events-none absolute inset-0 bg-[#F8F9FB]"
+        style="background-image: radial-gradient(#BFC7D1 1.5px, transparent 1.5px); background-size: 24px 24px; opacity: 0.5;"
+        aria-hidden="true"
+      >
+      </div>
+
+      <ol class="relative grid gap-10 md:grid-cols-3 lg:grid-cols-5 lg:gap-0">
+        {
+          steps.map((step, index) => {
+            const Icon = step.icon;
+
+            return (
+              <li class="relative flex flex-col items-center gap-4 text-center lg:px-3">
+                {/* Conector (sólo desktop). El tramo previo al paso 2 va en
+                    color de marca, como indicador de progreso del flujo. */}
+                {index > 0 && (
+                  <span
+                    class:list={[
+                      'absolute top-[30px] right-1/2 hidden h-0.5 w-full lg:block',
+                      index === 1 ? 'bg-brand' : 'bg-line-strong'
+                    ]}
+                    aria-hidden="true"
+                  />
+                )}
+
+                <span class="relative z-10 flex size-[60px] items-center justify-center rounded-2xl border border-line-cool bg-surface shadow-[0_1px_2px_rgba(15,23,42,0.05)]">
+                  <Icon class="size-7 text-brand" stroke-width={1.75} aria-hidden="true" />
+                </span>
+
+                <div class="relative z-10 flex flex-col gap-1.5">
+                  <h3 class="text-[13px] font-bold text-ink">{step.title}</h3>
+                  <p class="text-[11px] leading-[1.5] text-body">{step.body}</p>
+                </div>
+              </li>
+            );
+          })
+        }
+      </ol>
+    </div>
+  </div>
+</section>

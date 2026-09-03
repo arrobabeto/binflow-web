@@ -1,0 +1,55 @@
+---
+import { Sparkles, ShieldCheck, CircleCheck } from '@lucide/astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const pillars = [
+  {
+    icon: Sparkles,
+    title: 'La IA interpreta y crea',
+    body: 'Tú describes lo que necesitas y nuestra IA lo convierte en cambios reales, listos para publicar.'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'El sistema autoriza',
+    body: 'Cada cambio pasa por una revisión automática para que tu web nunca se rompa. Sin riesgos.'
+  },
+  {
+    icon: CircleCheck,
+    title: 'Tú apruebas',
+    body: 'Nada se publica sin tu visto bueno. Tú decides qué sale y qué no, siempre con control total.'
+  }
+];
+---
+
+<section class="bg-surface py-16 lg:py-24">
+  <div class="container-page flex flex-col items-center gap-12">
+    <SectionHeader eyebrow="IA CON RESPONSABILIDAD" title="Tu web protegida en cada paso" />
+
+    <div class="grid w-full gap-6 lg:grid-cols-3">
+      {
+        pillars.map((pillar) => {
+          const Icon = pillar.icon;
+
+          return (
+            <article
+              class="flex flex-col gap-4 rounded-2xl border border-line-cool bg-surface p-6"
+              data-reveal
+            >
+              <span class="flex size-11 items-center justify-center rounded-full bg-brand">
+                <Icon class="size-5 text-white" stroke-width={2} aria-hidden="true" />
+              </span>
+              <h3 class="text-[20px] font-semibold tracking-[-0.01em] text-ink">
+                {pillar.title}
+              </h3>
+              <p class="text-[15px] leading-[1.6] text-body">{pillar.body}</p>
+            </article>
+          );
+        })
+      }
+    </div>
+
+    <p class="text-[18px] font-bold text-brand lg:text-[20px]" data-reveal>
+      "Creatividad con cinturón de seguridad."
+    </p>
+  </div>
+</section>
