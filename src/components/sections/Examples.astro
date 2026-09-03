@@ -1,0 +1,34 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const examples = [
+  'Cambia el teléfono de contacto',
+  'Agrega esta promoción de temporada',
+  'Actualiza las fotos del equipo',
+  'Corrige ese texto del header',
+  'Agrega una nueva sección de servicios',
+  'Cambia los colores a la nueva marca',
+  'Sube el menú actualizado del restaurante',
+  'Pon un banner de próxima apertura',
+  'Agrega el enlace a nuestras redes sociales'
+];
+---
+
+<section class="rounded-3xl border border-line bg-surface py-14">
+  <div class="container-page flex flex-col items-center gap-8">
+    <SectionHeader
+      eyebrow="EJEMPLOS REALES"
+      title="Algunos ejemplos de lo que puedes pedirle a Binflow"
+    />
+
+    <ul class="flex max-w-[1100px] flex-wrap items-center justify-center gap-4" data-reveal>
+      {
+        examples.map((example) => (
+          <li class="rounded-lg bg-brand-tint-2 px-4 py-3 text-[15px] font-semibold text-ink">
+            {example}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

@@ -1,12 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+import Hero from '../components/sections/Hero.astro';
+import TrustStrip from '../components/sections/TrustStrip.astro';
+import Problem from '../components/sections/Problem.astro';
+import OwnerFocus from '../components/sections/OwnerFocus.astro';
+import Examples from '../components/sections/Examples.astro';
+import Solution from '../components/sections/Solution.astro';
+import Flow from '../components/sections/Flow.astro';
+import Audience from '../components/sections/Audience.astro';
+import Tools from '../components/sections/Tools.astro';
+import Stacks from '../components/sections/Stacks.astro';
+import AiBlock from '../components/sections/AiBlock.astro';
+import Metrics from '../components/sections/Metrics.astro';
+import Trust from '../components/sections/Trust.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
 ---
 
 <Layout
-  title="Binflow — Autogestión de páginas web con IA"
-  description="Binflow es una herramienta con inteligencia artificial para la autogestión de páginas web."
+  title="Escríbele a tu web como le escribirías a tu agencia"
+  description="Binflow es la plataforma de WebOps con IA para autogestionar tu página web: pide cambios en lenguaje natural por Telegram, revisa un preview real y publica con un clic."
 >
-  <main class="flex min-h-screen items-center justify-center bg-white">
-    <h1 class="text-4xl font-bold text-gray-900">Binflow</h1>
+  <Navbar />
+
+  <main>
+    <Hero />
+    <TrustStrip />
+    <Problem />
+    <OwnerFocus />
+    <Examples />
+    <Solution />
+    <Flow />
+    <Audience />
+    <Tools />
+    <Stacks />
+    <AiBlock />
+    <Metrics />
+    <Trust />
+    <FinalCta />
   </main>
+
+  <Footer />
 </Layout>

@@ -1,0 +1,84 @@
+---
+import { AudioWaveform } from '@lucide/astro';
+
+const columns = [
+  {
+    title: 'Producto',
+    links: ['Características', 'Seguridad', 'Precios', 'Integraciones']
+  },
+  {
+    title: 'Soporte',
+    links: ['Documentación', 'Estado API', 'Contacto', 'Privacidad']
+  }
+];
+---
+
+<footer class="bg-ink pt-16 pb-10 text-white">
+  <div class="container-page flex flex-col gap-10">
+    <div class="flex flex-col justify-between gap-10 lg:flex-row">
+      <!-- Marca -->
+      <div class="flex max-w-[320px] flex-col gap-3">
+        <div class="flex items-center gap-3">
+          <span class="flex size-8 items-center justify-center rounded-lg bg-[#3B82F6]">
+            <AudioWaveform class="size-4 text-white" stroke-width={2.25} aria-hidden="true" />
+          </span>
+          <span class="flex flex-col leading-none">
+            <span class="text-[16px] font-bold text-surface-alt">Binflow</span>
+            <span
+              class="mt-1 font-mono text-[9px] tracking-[0.14em] text-brand"
+              >CONTROL PLANE</span
+            >
+          </span>
+        </div>
+        <p class="text-[14px] leading-[1.6] text-faint">
+          La plataforma de WebOps impulsada por IA con la seguridad, el rigor y la
+          velocidad que exigen tus flujos operacionales.
+        </p>
+      </div>
+
+      <!-- Columnas de enlaces -->
+      <div class="flex gap-16">
+        {
+          columns.map((column) => (
+            <div class="flex flex-col gap-3">
+              <h2 class="text-[14px] font-bold text-surface-alt">{column.title}</h2>
+              <ul class="flex flex-col gap-2">
+                {column.links.map((link) => (
+                  <li>
+                    <a
+                      href="#"
+                      class="text-[13px] text-faint transition-colors hover:text-white"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div
+      class="flex flex-col-reverse items-start justify-between gap-4 sm:flex-row sm:items-center"
+    >
+      <p class="font-mono text-[12px] tracking-[0.04em] text-faint">
+        © 2026 BINFLOW AI. TODOS LOS DERECHOS RESERVADOS.
+      </p>
+      <ul class="flex items-center gap-4">
+        <li>
+          <a href="#" class="text-[12px] text-faint transition-colors hover:text-white"
+            >Términos de servicio</a
+          >
+        </li>
+        <li>
+          <a href="#" class="text-[12px] text-faint transition-colors hover:text-white"
+            >Políticas de privacidad</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

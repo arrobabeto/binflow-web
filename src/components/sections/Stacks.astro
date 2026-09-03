@@ -1,0 +1,62 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const stacks = [
+  {
+    number: '01',
+    name: 'Astro',
+    body: 'Webs ultrarrápidas que cargan al instante. Binflow las actualiza sin perder un milisegundo de velocidad.'
+  },
+  {
+    number: '02',
+    name: 'Astro + Orbitype',
+    body: 'La combinación perfecta: tu contenido organizado en la nube y tu web volando. Binflow gestiona ambos por ti.'
+  },
+  {
+    number: '03',
+    name: 'Nuxt + Orbitype',
+    body: 'Apps potentes con Vue que escalan sin límite. Binflow mantiene todo actualizado sin interrupciones.'
+  },
+  {
+    number: '04',
+    name: 'Astro + WP Headless',
+    body: '¿Ya usas WordPress? Perfecto. Binflow lo potencia con velocidad moderna sin que cambies nada.'
+  },
+  {
+    number: '05',
+    name: 'WordPress Classic',
+    body: 'Tu WordPress de siempre, pero con superpoderes. Actualiza temas y plugins con la tranquilidad de que nada se rompe.'
+  }
+];
+---
+
+<section class="bg-surface-alt py-16 lg:py-[60px]" id="stacks">
+  <div class="container-page flex flex-col items-center gap-12">
+    <SectionHeader
+      eyebrow="COMPATIBILIDAD TOTAL"
+      title="Binflow se conecta con tu tecnología favorita."
+    />
+
+    <div class="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {
+        stacks.map((stack) => (
+          <article
+            class="flex flex-col gap-4 rounded-lg border border-line-cool bg-surface p-5 shadow-[0_1px_3px_rgba(15,23,42,0.05)]"
+            data-reveal
+          >
+            <span class="font-mono text-[12px] font-bold text-brand">{stack.number}</span>
+            <h3 class="text-[18px] font-bold tracking-[-0.01em] text-ink">{stack.name}</h3>
+            <p class="text-[13px] leading-[1.55] text-body">{stack.body}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <p
+      class="font-mono text-[13px] font-semibold tracking-[0.06em] text-muted"
+      data-reveal
+    >
+      NO IMPORTA TU STACK. BINFLOW SE ADAPTA A TI.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+import { Building, Megaphone, FileText } from '@lucide/astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const audiences = [
+  {
+    icon: Building,
+    title: 'Dueños de negocio',
+    body: 'Publica cambios en tu web sin depender de técnicos. Aprueba desde Telegram y mantén el control total.'
+  },
+  {
+    icon: Megaphone,
+    title: 'Agencias de Marketing',
+    body: 'Gestiona múltiples clientes desde un solo lugar. Escala operaciones sin contratar más personal.'
+  },
+  {
+    icon: FileText,
+    title: 'Equipo de Contenido',
+    body: 'Crea y publica contenido manteniendo tono, estilo y consistencia de marca en cada pieza.'
+  }
+];
+---
+
+<section class="bg-surface py-16 lg:py-[70px]">
+  <div class="container-page flex flex-col items-center gap-12">
+    <SectionHeader eyebrow="HECHO PARA" title="Una plataforma, múltiples roles" />
+
+    <div class="grid w-full gap-6 lg:grid-cols-3">
+      {
+        audiences.map((audience) => {
+          const Icon = audience.icon;
+
+          return (
+            <article
+              class="flex flex-col gap-4 rounded-lg border border-line-cool bg-surface p-6 shadow-[0_1px_3px_rgba(15,23,42,0.05)] transition-shadow hover:shadow-[0_4px_16px_rgba(15,23,42,0.08)]"
+              data-reveal
+            >
+              <span class="flex size-11 items-center justify-center rounded-full bg-brand">
+                <Icon class="size-5 text-white" stroke-width={2} aria-hidden="true" />
+              </span>
+              <h3 class="text-[18px] font-bold tracking-[-0.01em] text-ink">
+                {audience.title}
+              </h3>
+              <p class="text-[14px] leading-[1.6] text-body">{audience.body}</p>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

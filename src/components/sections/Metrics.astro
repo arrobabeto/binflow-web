@@ -1,0 +1,94 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const metrics = [
+  {
+    value: '~2 min',
+    label: 'Tiempo a preview',
+    body: 'Reducción del 90% en tiempos de espera.'
+  },
+  {
+    value: '+85%',
+    label: 'Self-serve',
+    body: 'Autonomía completa para redactores y editores.'
+  },
+  {
+    value: '↓ 75%',
+    label: 'Revisiones',
+    body: 'Menor fricción gracias al sandbox predictivo.'
+  },
+  {
+    value: 'Mínimo',
+    label: '$ / pedido',
+    body: 'Costos de IA transparentes y optimizados.'
+  },
+  {
+    value: 'Cero',
+    label: 'Conflictos de versión',
+    body: 'Integración limpia mediante Git Control.'
+  },
+  {
+    value: '100%',
+    label: 'Aislamiento total',
+    body: 'Sandbox seguro para cada actualización.'
+  }
+];
+
+// La baraja apilada del Figma: la carta frontal es la última (100%),
+// y el resto asoma escalonado hacia abajo/derecha.
+const deck = [...metrics].reverse();
+---
+
+<section class="bg-surface-alt py-16 lg:py-24">
+  <div class="container-page flex flex-col items-center gap-12">
+    <SectionHeader
+      eyebrow="IMPACTO"
+      title="La diferencia operativa de un workflow inteligente"
+    />
+
+    <!-- Baraja apilada -->
+    <div
+      class="relative hidden h-[250px] w-[430px] lg:block"
+      data-reveal
+      aria-hidden="true"
+    >
+      {
+        deck.map((metric, index) => {
+          // index 0 = carta frontal (arriba-izquierda), el resto escalona +5px
+          const offset = index * 5;
+
+          return (
+            <div
+              class="absolute flex w-[380px] max-w-full flex-col items-center gap-2 rounded-2xl border border-line-cool bg-surface px-6 py-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)]"
+              style={`left:${25 + offset}px; top:${offset}px; z-index:${deck.length - index};`}
+            >
+              <span class="text-[32px] font-bold tracking-[-0.02em] text-brand lg:text-[36px]">
+                {metric.value}
+              </span>
+              <span class="text-[16px] font-semibold text-ink">{metric.label}</span>
+              <span class="text-center text-[13px] text-body">{metric.body}</span>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <!-- Rejilla completa -->
+    <div class="grid w-full gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        metrics.map((metric) => (
+          <article
+            class="flex flex-col items-center gap-2 rounded-2xl border border-line-cool bg-surface px-6 py-7 text-center"
+            data-reveal
+          >
+            <span class="text-[32px] font-bold tracking-[-0.02em] text-brand">
+              {metric.value}
+            </span>
+            <span class="text-[16px] font-semibold text-ink">{metric.label}</span>
+            <span class="text-[13px] leading-[1.5] text-body">{metric.body}</span>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

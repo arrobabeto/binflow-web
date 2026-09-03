@@ -1,0 +1,41 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  /** Ancho máximo del título, en px (según Figma varía por sección). */
+  maxWidth?: number;
+  align?: 'center' | 'left';
+  /**
+   * Respeta los saltos de línea del `title` a partir de `lg`.
+   * En móvil el texto fluye de forma natural.
+   */
+  preserveLineBreaks?: boolean;
+}
+
+const {
+  eyebrow,
+  title,
+  maxWidth,
+  align = 'center',
+  preserveLineBreaks = false
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'flex flex-col gap-3',
+    align === 'center' ? 'items-center text-center' : 'items-start text-left'
+  ]}
+  data-reveal
+>
+  <span class="eyebrow">{eyebrow}</span>
+  <h2
+    class:list={[
+      'text-[28px] leading-[1.3] font-bold tracking-[-0.02em] text-ink lg:text-[36px]',
+      preserveLineBreaks ? 'lg:whitespace-pre-line' : 'text-balance'
+    ]}
+    style={maxWidth ? `max-width:${maxWidth}px` : undefined}
+  >
+    {title}
+  </h2>
+</div>

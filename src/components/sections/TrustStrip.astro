@@ -1,0 +1,40 @@
+---
+const features = [
+  'Contenido bilingüe',
+  'Preview exacto',
+  'Aprobaciones claras',
+  'Costos de IA medibles'
+];
+
+const stacks = ['ASTRO', 'NUXT', 'ORBITYPE', 'WORDPRESS'];
+---
+
+<section class="border-b border-line bg-surface py-6" aria-label="Capacidades y compatibilidad">
+  <div
+    class="container-page flex flex-wrap items-center justify-between gap-x-8 gap-y-4"
+  >
+    <ul class="flex flex-wrap items-center gap-x-8 gap-y-3">
+      {
+        features.map((feature) => (
+          <li class="flex items-center gap-2">
+            <span class="size-1.5 rounded-full bg-brand" aria-hidden="true" />
+            <span class="text-[14px] font-semibold text-ink">{feature}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <span class="hidden h-px w-10 bg-line-strong lg:block" aria-hidden="true"></span>
+      <ul class="flex flex-wrap items-center gap-4">
+        {
+          stacks.map((stack) => (
+            <li class="font-mono text-[11px] font-bold tracking-[0.06em] text-muted">
+              {stack}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

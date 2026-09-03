@@ -1,0 +1,46 @@
+---
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const tools = [
+  { name: 'Crear artículo de blog', tag: 'POST' },
+  { name: 'Crear caso/proyecto', tag: 'PORTFOLIO' },
+  { name: 'Editar texto existente', tag: 'EDITORIAL' },
+  { name: 'Editar o refinar imagen', tag: 'ASSETS' },
+  { name: 'Editar estilo visual', tag: 'TAILWIND' },
+  { name: 'Actualizar menú de navegación', tag: 'MENU' },
+  { name: 'Ticket fuera de catálogo', tag: 'CUSTOM' },
+  { name: 'Reemplazar una imagen', tag: 'MEDIA' },
+  { name: 'Subir nuevo menú de restaurante', tag: 'PDF' },
+  { name: 'Cambiar un PDF', tag: 'DOCUMENTO' },
+  { name: 'Crear una nueva sección', tag: 'LAYOUT' },
+  { name: 'Actualizar horarios y contacto', tag: 'INFO' }
+];
+---
+
+<section class="bg-surface pt-8 pb-16 lg:pb-24" id="tools">
+  <div class="container-page flex flex-col items-center gap-8">
+    <SectionHeader
+      eyebrow="TOOLS IMPULSADAS POR IA"
+      title="Un arsenal de operaciones listas para ejecutar"
+    />
+
+    <ul class="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        tools.map((tool) => (
+          <li
+            class="flex items-center gap-4 rounded-lg border border-line-cool bg-surface p-4 transition-colors hover:border-brand/50"
+            data-reveal
+          >
+            <span class="size-2 shrink-0 rounded-full bg-brand" aria-hidden="true" />
+            <span class="flex flex-col gap-0.5">
+              <span class="text-[14px] font-semibold text-ink">{tool.name}</span>
+              <span class="font-mono text-[10px] tracking-[0.06em] text-muted">
+                {tool.tag}
+              </span>
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

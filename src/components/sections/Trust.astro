@@ -1,0 +1,51 @@
+---
+import { CirclePlus } from '@lucide/astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+
+const guarantees = [
+  {
+    title: 'Preview obligatorio',
+    body: 'Ningún código se procesa directamente sobre el entorno de producción.'
+  },
+  {
+    title: 'Aprobación vinculada',
+    body: 'El despliegue final coincide de forma idéntica con el sandbox previsualizado.'
+  },
+  {
+    title: 'Doble visto bueno',
+    body: 'Capacidad para exigir múltiples aprobaciones para cambios críticos.'
+  },
+  {
+    title: 'Registro total',
+    body: 'Commit automatizado de cada cambio para control de versiones.'
+  },
+  {
+    title: 'Acceso privado',
+    body: 'Infraestructura segura por invitación para control estricto.'
+  }
+];
+---
+
+<section class="bg-surface py-16 lg:py-24">
+  <div class="container-page flex flex-col items-center gap-12">
+    <SectionHeader
+      eyebrow="CONFIANZA"
+      title="Garantías operativas para entornos corporativos"
+    />
+
+    <div class="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {
+        guarantees.map((item) => (
+          <article
+            class="flex flex-col gap-3 rounded-lg border border-line-cool bg-surface p-5 shadow-[0_1px_3px_rgba(15,23,42,0.05)]"
+            data-reveal
+          >
+            <CirclePlus class="size-[18px] text-brand" stroke-width={2} aria-hidden="true" />
+            <h3 class="text-[15px] font-bold text-ink">{item.title}</h3>
+            <p class="text-[12px] leading-[1.55] text-body">{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
