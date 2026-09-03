@@ -62,7 +62,7 @@ const deck = [...metrics].reverse();
               class="absolute flex w-[380px] max-w-full flex-col items-center gap-2 rounded-2xl border border-line-cool bg-surface px-6 py-7 shadow-[0_1px_3px_rgba(15,23,42,0.06)]"
               style={`left:${25 + offset}px; top:${offset}px; z-index:${deck.length - index};`}
             >
-              <span class="text-[32px] font-bold tracking-[-0.02em] text-brand lg:text-[36px]">
+              <span class="text-[32px] font-bold text-brand lg:text-[36px]">
                 {metric.value}
               </span>
               <span class="text-[16px] font-semibold text-ink">{metric.label}</span>
@@ -81,7 +81,7 @@ const deck = [...metrics].reverse();
             class="flex flex-col items-center gap-2 rounded-2xl border border-line-cool bg-surface px-6 py-7 text-center"
             data-reveal
           >
-            <span class="text-[32px] font-bold tracking-[-0.02em] text-brand">
+            <span class="text-[32px] font-bold text-brand">
               {metric.value}
             </span>
             <span class="text-[16px] font-semibold text-ink">{metric.label}</span>
